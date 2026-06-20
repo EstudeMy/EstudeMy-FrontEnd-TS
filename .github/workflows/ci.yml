@@ -44,8 +44,8 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}    # Necessário para autenticar com o SonarCloud
         with:
           args: >
-            -Dsonar.projectKey=milysj_Front-End-TS
-            -Dsonar.organization=milysj
+            -Dsonar.projectKey=EstudeMy_EstudeMy-FrontEnd-TS
+            -Dsonar.organization=estudemy
             -Dsonar.sources=src
             -Dsonar.tests=src
             -Dsonar.test.inclusions=**/*.test.ts,**/*.spec.ts
@@ -158,12 +158,12 @@ jobs:
         with:
           server_address: smtp.gmail.com  # Update to your SMTP server
           server_port: 587
-          username: ${{ secrets.EMAIL_ORIGIN }}
+          username: ${{ secrets.EMAIL_ORIGEN }}
           password: ${{ secrets.EMAIL_APP_PASSWORD }}  # Use app password, not regular password
           subject: "Falha no CI (version) - Front-End-TS"
           body: "O processo de CI/versão falhou. Por favor, verifique os logs para mais detalhes."
           to: ${{ secrets.EMAIL_DESTINO }}
-          from: ${{ secrets.EMAIL_ORIGIN }}
+          from: ${{ secrets.EMAIL_ORIGEN }}
 
   build-hml:
     name: build-hml
@@ -205,12 +205,12 @@ jobs:
         with:
           server_address: smtp.gmail.com
           server_port: 587
-          username: ${{ secrets.EMAIL_ORIGIN }}
+          username: ${{ secrets.EMAIL_ORIGEN }}
           password: ${{ secrets.EMAIL_APP_PASSWORD }}  
           subject: "Falha no CI (build-hml) - Front-End-TS"
           body: "A build de HML falhou. Por favor, verifique os logs para mais detalhes."
           to: ${{ secrets.EMAIL_DESTINO }}
-          from: ${{ secrets.EMAIL_ORIGIN }}
+          from: ${{ secrets.EMAIL_ORIGEN }}
 
   build-prod:
     name: build-prod
@@ -253,9 +253,9 @@ jobs:
         with:
           server_address: smtp.gmail.com
           server_port: 587
-          username: ${{ secrets.EMAIL_ORIGIN }}
+          username: ${{ secrets.EMAIL_ORIGEN }}
           password: ${{ secrets.EMAIL_APP_PASSWORD }}  
           subject: "Falha no CI (build-prod) - Front-End-TS"
           body: "A build de PROD falhou. Por favor, verifique os logs para mais detalhes."
           to: ${{ secrets.EMAIL_DESTINO }}
-          from: ${{ secrets.EMAIL_ORIGIN }}
+          from: ${{ secrets.EMAIL_ORIGEN }}
